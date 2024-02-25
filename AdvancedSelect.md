@@ -1,6 +1,6 @@
 # Advanced Select
 
-## The PADS
+## 1. The PADS
 Generate the following two result sets:
 
 Query an alphabetically ordered list of all names in OCCUPATIONS, immediately followed by the first letter of each profession as a parenthetical (i.e.: enclosed in parentheses). For example: AnActorName(A), ADoctorName(D), AProfessorName(P), and ASingerName(S).
@@ -30,3 +30,16 @@ FROM Occupations
 GROUP BY Occupation
 ORDER BY COUNT(*) ASC, Occupation;
 ```
+
+## 2. Occupations
+Pivot the Occupation column in OCCUPATIONS so that each Name is sorted alphabetically and displayed underneath its corresponding Occupation. The output column headers should be Doctor, Professor, Singer, and Actor, respectively.
+
+> [!NOTE]
+> Print NULL when there are no more names corresponding to an occupation.
+
+Input Format
+The OCCUPATIONS table is described as follows:
+
+![image](https://github.com/shinysn/HackerRank_SQL/assets/68563246/c312e244-ca0f-4503-9e4b-0c065cdb21bf)
+
+###Solution:
