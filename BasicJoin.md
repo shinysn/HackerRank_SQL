@@ -178,4 +178,31 @@ The following tables contain challenge data:
 
 ### Solution:
 ```
+SELECT b.id, b.name, a.cnt_challenges
+FROM (SELECT h.hacker_id, h.name, COUNT(c.challenge_id) AS cnt_challenges, RANK() OVER (ORDER BY COUNT(c.challenge_id) DESC) AS ranknum
+      FROM Hackers h
+      JOIN Challenges c ON h.hacker_id = c.hacker_id
+      GROUP BY h.hacker_id, h.name
+     ) a
+JOIN (SELECT h.hacker_id AS id, h.name AS name, COUNT(c.challenge_id) AS cnt_challenges
+      FROM Hackers h
+      JOIN Challenges c ON h.hacker_id = c.hacker_id
+      GROUP BY h.hacker_id, h.name
+     ) b
+ON a.cnt_challenges = b.cnt_challenges
+GROUP BY a.cnt_challenges, b.id, b.name
+HAVING count(ranknum) = 1 OR 
+a.cnt_challenges = (SELECT MAX(cnt_challenges) 
+                    FROM (SELECT COUNT(challenge_id) 
+                          AS cnt_challenges 
+                          FROM Challenges GROUP BY hacker_id
+                         )
+                   )
+ORDER BY a.cnt_challenges DESC, b.id;
+```
+> OR
+```
+```
+> OR
+```
 ```
