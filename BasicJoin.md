@@ -1,4 +1,4 @@
-![1458538092-b2a8163a74-ScreenShot2016-03-08at12 13 39AM](https://github.com/shinysn/HackerRank_SQL/assets/68563246/273d7947-4938-4706-9d3d-b05c2d4d7b8f)# Basic Join
+# Basic Join
 ## 1. Population Census
 Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'.
 
@@ -144,6 +144,7 @@ Hermione decides the best way to choose is by determining the minimum number of 
 Input Format
 The following tables contain data on the wands in Ollivander's inventory:
 - Wands: The id is the id of the wand, code is the code of the wand, coins_needed is the total number of gold galleons needed to buy the wand, and power denotes the quality of the wand (the higher the power, the better the wand is).
+
 ![1458538092-b2a8163a74-ScreenShot2016-03-08at12 13 39AM](https://github.com/shinysn/HackerRank_SQL/assets/68563246/ae5d6ca5-5855-4dbd-84ac-1993ba857332)
 
 - Wands_Property: The code is the code of the wand, age is the age of the wand, and is_evil denotes whether the wand is good for the dark arts. If the value of is_evil is 0, it means that the wand is not evil. The mapping between code and age is one-one, meaning that if there are two pairs, (code1, age1) and (code2, age2), then code1 != code2 and age1 != age2
